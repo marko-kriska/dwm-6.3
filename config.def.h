@@ -61,7 +61,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *rofi[]  = { "rofi_run", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *filecmd[]  = { "pcmanfm", NULL };
-static const char *browsercmd[] = { "brave",  NULL };
+static const char *browsercmd[] = { "firefox",  NULL };
 static const char *calendar[]  = { "gsimplecal", NULL };
 static const char *screenshot[]     = { "flameshot", "gui", NULL };
 
