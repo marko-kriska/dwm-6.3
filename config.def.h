@@ -29,7 +29,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "chromium",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -63,7 +63,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *rofi[]  = { "rofi_run", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *filecmd[]  = { "pcmanfm", NULL };
-static const char *browsercmd[] = { "firefox",  NULL };
+static const char *browsercmd[] = { "chromium",  NULL };
 static const char *calendar[]  = { "gsimplecal", NULL };
 static const char *screenshot[]     = { "flameshot", "gui", NULL };
 
