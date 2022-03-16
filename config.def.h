@@ -83,9 +83,13 @@ static const char *rebootcmd[]     = { "systemctl", "reboot", NULL };
 static const char *shutdowncmd[]   = { "systemctl", "poweroff", NULL };
 
 /* volume */
-static const char *upvol[]   = { "pactl", "set-sink-volume", "0", "+5%",     NULL };
-static const char *downvol[] = { "pactl", "set-sink-volume", "0", "-5%",     NULL };
-static const char *mutevol[] = { "pactl", "set-sink-mute",   "0", "toggle",  NULL };
+/*static const char *upvol[]   = { "pactl", "set-sink-volume", "0", "+5%",     NULL };*/
+/*static const char *downvol[] = { "pactl", "set-sink-volume", "0", "-5%",     NULL };*/
+/*static const char *mutevol[] = { "pactl", "set-sink-mute",   "0", "toggle",  NULL };*/
+/*static const char *mutemic[] = { "pactl", "set-source-mute", "@DEFAULT_SOURCE@", "toggle", NULL };*/
+static const char *upvol[]   = { "volchange", "volup", NULL };
+static const char *downvol[] = { "volchange", "voldown", NULL };
+static const char *mutevol[] = { "volchange", "volmute", NULL };
 static const char *mutemic[] = { "pactl", "set-source-mute", "@DEFAULT_SOURCE@", "toggle", NULL };
 
 static Key keys[] = {
