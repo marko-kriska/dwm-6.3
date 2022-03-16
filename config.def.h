@@ -18,7 +18,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "1", "2", "3" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -27,7 +27,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "firefox",  NULL,       NULL,       1,            0,           -1 },
 };
 
 /* layout(s) */
@@ -80,10 +80,6 @@ static const char *rebootcmd[]     = { "systemctl", "reboot", NULL };
 static const char *shutdowncmd[]   = { "systemctl", "poweroff", NULL };
 
 /* volume */
-/*static const char *upvol[]   = { "pactl", "set-sink-volume", "0", "+5%",     NULL };*/
-/*static const char *downvol[] = { "pactl", "set-sink-volume", "0", "-5%",     NULL };*/
-/*static const char *mutevol[] = { "pactl", "set-sink-mute",   "0", "toggle",  NULL };*/
-/*static const char *mutemic[] = { "pactl", "set-source-mute", "@DEFAULT_SOURCE@", "toggle", NULL };*/
 static const char *upvol[]   = { "volchange", "volup", NULL };
 static const char *downvol[] = { "volchange", "voldown", NULL };
 static const char *mutevol[] = { "volchange", "volmute", NULL };
