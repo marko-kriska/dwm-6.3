@@ -4,8 +4,8 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Terminus:weight=regular:size=10", };
-static const char dmenufont[]       = "Terminus:weight=regular:size=10";
+static const char *fonts[]          = { "monospace:size=10" };
+static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -18,8 +18,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-/* static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };*/
-static const char *tags[] = { "1", "2", "3" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -27,8 +26,8 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "firefox",  NULL,       NULL,       1,       0,           -1 },
+	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -62,7 +61,6 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *filecmd[]  = { "pcmanfm", NULL };
 static const char *browsercmd[] = { "firefox",  NULL };
-static const char *calendar[]  = { "gsimplecal", NULL };
 static const char *screenshot[]     = { "flameshot", "gui", NULL };
 
 /* TUI */
@@ -162,9 +160,7 @@ static Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button1,        spawn,          {.v = termcmd } },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = filecmd } },
-	{ ClkStatusText,        0,              Button3,        spawn,          {.v = calendar } },
+	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
