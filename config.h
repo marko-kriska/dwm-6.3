@@ -83,8 +83,7 @@ static const char *shutdowncmd[]   = { "systemctl", "poweroff", NULL };
 static const char *upvol[]   = { "volchange", "volup", NULL };
 static const char *downvol[] = { "volchange", "voldown", NULL };
 static const char *mutevol[] = { "volchange", "volmute", NULL };
-static const char *mutemic[] = { "volchange", "micmute", NULL };
-/*static const char *mutemic[] = { "pactl", "set-source-mute", "@DEFAULT_SOURCE@", "toggle", NULL };*/
+static const char *mutemic[] = { "pactl", "set-source-mute", "@DEFAULT_SOURCE@", "toggle", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
