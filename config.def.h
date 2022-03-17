@@ -10,7 +10,7 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+static const char col_cyan[]        = "#c67c38";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -83,7 +83,8 @@ static const char *shutdowncmd[]   = { "systemctl", "poweroff", NULL };
 static const char *upvol[]   = { "volchange", "volup", NULL };
 static const char *downvol[] = { "volchange", "voldown", NULL };
 static const char *mutevol[] = { "volchange", "volmute", NULL };
-static const char *mutemic[] = { "pactl", "set-source-mute", "@DEFAULT_SOURCE@", "toggle", NULL };
+static const char *mutemic[] = { "volchange", "micmute", NULL };
+/*static const char *mutemic[] = { "pactl", "set-source-mute", "@DEFAULT_SOURCE@", "toggle", NULL };*/
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
