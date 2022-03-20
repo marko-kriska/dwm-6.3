@@ -90,8 +90,8 @@ static const char *mutemic[] = { "micchange", NULL };
 /*static const char *mutemic[] = { "pactl", "set-source-mute", "@DEFAULT_SOURCE@", "toggle", NULL };*/
 
 /* backlight */
-static const char *brightnessup[] = { "sudo", "xbacklight", "-inc" "5", NULL };
-static const char *brightnessdown[] = { "sudo", "xbacklight", "-dec", "5", NULL };
+/*static const char *brightnessup[] = { "xbacklight", "-inc", "10", NULL };*/
+/*static const char *brightnessdown[] = { "xbacklight", "-dec", "10", NULL };*/
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -145,8 +145,8 @@ static Key keys[] = {
 	{ 0,              XF86XK_AudioMicMute,     spawn,          {.v = mutemic } },
 
 	/* BRIGHTNESS*/
-	{ 0,             XF86XK_MonBrightnessUp,   spawn,          {.v = brightnessup} },
-        { 0,             XF86XK_MonBrightnessDown, spawn,          {.v = brightnessdown} },
+	/*{ 0,             XF86XK_MonBrightnessUp,   spawn,          {.v = brightnessup} },*/
+        /*{ 0,             XF86XK_MonBrightnessDown, spawn,          {.v = brightnessdown} },*/
 
 	/* TAGKEYS */
 	TAGKEYS(                        XK_1,                      0)
