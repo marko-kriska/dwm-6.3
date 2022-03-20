@@ -139,7 +139,7 @@ static Key keys[] = {
 	{ 0,              XF86XK_AudioMute,        spawn,          {.v = mutevol } },
 	{ 0,              XF86XK_AudioRaiseVolume, spawn,          {.v = upvol   } },
 	{ 0,              XF86XK_AudioMicMute,     spawn,          {.v = mutemic } },
-	
+
 	/* TAGKEYS */
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
