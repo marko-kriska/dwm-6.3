@@ -80,7 +80,7 @@ static const char *rebootcmd[]     = { "systemctl", "reboot", NULL };
 static const char *shutdowncmd[]   = { "systemctl", "poweroff", NULL };
 
 /* volume */
-static const char *upvol[]   = { "volchange", "volup", NULL };
+static const char *upvol[]   = { "volchange", "volup",   NULL};
 static const char *downvol[] = { "volchange", "voldown", NULL };
 static const char *mutevol[] = { "volchange", "volmute", NULL };
 static const char *mutemic[] = { "micchange", NULL };
