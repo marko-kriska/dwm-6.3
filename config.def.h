@@ -57,30 +57,30 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
-static const char *filecmd[]  = { "pcmanfm", NULL };
-static const char *browsercmd[] = { "firefox",  NULL };
-static const char *screenshot[]     = { "flameshot", "gui", NULL };
+static const char *dmenucmd[]   = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *termcmd[]    = { "alacritty", NULL };
+static const char *filecmd[]    = { "pcmanfm",   NULL };
+static const char *browsercmd[] = { "firefox",   NULL };
+static const char *screenshot[] = { "flameshot", "gui", NULL };
 
 /* TUI */
-static const char *mail[]  = { "/bin/sh", "-c", "alacritty -e neomutt", NULL };
-static const char *rofi[]  = { "/bin/sh", "-c", "rofi -show run", NULL };
+static const char *mail[] = { "/bin/sh", "-c", "alacritty -e neomutt", NULL };
+static const char *rofi[] = { "/bin/sh", "-c", "rofi -show run",       NULL };
 
 /* scripts */
-static const char *dmenupw[]  = { "power_dmenu", NULL };
-static const char *passcmd[] = { "passmenu", NULL };
-static const char *rofibeats[]  = { "rofi-beats", NULL };
+static const char *dmenupw[]   = { "power_dmenu", NULL };
+static const char *passcmd[]   = { "passmenu",    NULL };
+static const char *rofibeats[] = { "rofi-beats",  NULL };
 
 /* power */
-static const char *lockcmd[]       = { "slock", NULL };
-static const char *suspendcmd[]    = { "systemctl", "suspend", NULL };
-static const char *hibernatecmd[]  = { "systemctl", "hibernate", NULL };
-static const char *rebootcmd[]     = { "systemctl", "reboot", NULL };
-static const char *shutdowncmd[]   = { "systemctl", "poweroff", NULL };
+static const char *lockcmd[]      = { "slock", NULL };
+static const char *suspendcmd[]   = { "systemctl", "suspend",   NULL };
+static const char *hibernatecmd[] = { "systemctl", "hibernate", NULL };
+static const char *rebootcmd[]    = { "systemctl", "reboot",    NULL };
+static const char *shutdowncmd[]  = { "systemctl", "poweroff",  NULL };
 
 /* volume */
-static const char *upvol[]   = { "volchange", "volup",   NULL};
+static const char *upvol[]   = { "volchange", "volup",   NULL };
 static const char *downvol[] = { "volchange", "voldown", NULL };
 static const char *mutevol[] = { "volchange", "volmute", NULL };
 static const char *mutemic[] = { "micchange", NULL };
@@ -90,7 +90,7 @@ static const char *mutemic[] = { "micchange", NULL };
 /*static const char *mutemic[] = { "pactl", "set-source-mute", "@DEFAULT_SOURCE@", "toggle", NULL };*/
 
 /* backlight */
-/*static const char *brightnessup[] = { "xbacklight", "-inc", "10", NULL };*/
+/*static const char *brightnessup[]   = { "xbacklight", "-inc", "10", NULL };*/
 /*static const char *brightnessdown[] = { "xbacklight", "-dec", "10", NULL };*/
 
 static Key keys[] = {
@@ -145,8 +145,8 @@ static Key keys[] = {
 	{ 0,              XF86XK_AudioMicMute,     spawn,          {.v = mutemic } },
 
 	/* BRIGHTNESS*/
-	/*{ 0,             XF86XK_MonBrightnessUp,   spawn,          {.v = brightnessup} },*/
-        /*{ 0,             XF86XK_MonBrightnessDown, spawn,          {.v = brightnessdown} },*/
+	/*{ 0,            XF86XK_MonBrightnessUp,   spawn,         {.v = brightnessup} },*/
+        /*{ 0,            XF86XK_MonBrightnessDown, spawn,         {.v = brightnessdown} },*/
 
 	/* TAGKEYS */
 	TAGKEYS(                        XK_1,                      0)
