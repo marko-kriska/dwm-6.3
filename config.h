@@ -81,18 +81,20 @@ static const char *rebootcmd[]    = { "systemctl", "reboot",    NULL };
 static const char *shutdowncmd[]  = { "systemctl", "poweroff",  NULL };
 
 /* volume */
-static const char *upvol[]   = { "volchange", "volup",   NULL };
-static const char *downvol[] = { "volchange", "voldown", NULL };
-static const char *mutevol[] = { "volchange", "volmute", NULL };
-static const char *mutemic[] = { "micchange", NULL };
 /*static const char *upvol[]   = { "pactl", "set-sink-volume", "0", "+5%",     NULL };*/
 /*static const char *downvol[] = { "pactl", "set-sink-volume", "0", "-5%",     NULL };*/
 /*static const char *mutevol[] = { "pactl", "set-sink-mute",   "0", "toggle",  NULL };*/
 /*static const char *mutemic[] = { "pactl", "set-source-mute", "@DEFAULT_SOURCE@", "toggle", NULL };*/
+static const char *upvol[]   = { "pulseaudio-ctl", "up",   NULL };
+static const char *downvol[] = { "pulseaudio-ctl", "down", NULL };
+static const char *mutevol[] = { "pulseaudio-ctl", "mute", NULL };
+static const char *mutemic[] = { "pulseaudio-ctl", "mute-input", NULL };
 
 /* backlight */
 /*static const char *brightnessup[]   = { "xbacklight", "-inc", "10", NULL };*/
 /*static const char *brightnessdown[] = { "xbacklight", "-dec", "10", NULL };*/
+static const char *brightnessup[]   = { "xbacklight-ctl", "up", NULL };
+static const char *brightnessdown[] = { "xbacklight-ctl", "down", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -146,8 +148,8 @@ static Key keys[] = {
 	{ 0,              XF86XK_AudioMicMute,     spawn,          {.v = mutemic } },
 
 	/* BRIGHTNESS*/
-	/*{ 0,            XF86XK_MonBrightnessUp,   spawn,         {.v = brightnessup} },*/
-        /*{ 0,            XF86XK_MonBrightnessDown, spawn,         {.v = brightnessdown} },*/
+	{ 0,            XF86XK_MonBrightnessUp,   spawn,         {.v = brightnessup} },
+        { 0,            XF86XK_MonBrightnessDown, spawn,         {.v = brightnessdown} },
 
 	/* TAGKEYS */
 	TAGKEYS(                        XK_1,                      0)
