@@ -69,7 +69,6 @@ static const char *mail[] = { "/bin/sh", "-c", "alacritty -e neomutt", NULL };
 static const char *rofi[] = { "/bin/sh", "-c", "rofi -show run",       NULL };
 
 /* scripts */
-static const char *dmenupw[]   = { "power_dmenu", NULL };
 static const char *passcmd[]   = { "passmenu",    NULL };
 static const char *rofibeats[] = { "rofi-beats",  NULL };
 
@@ -131,7 +130,6 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	
 	/* MODKEY|ControlMask */
-	{ MODKEY|ControlMask,           XK_q,      spawn,          {.v = dmenupw } },
 	{ MODKEY|ControlMask,           XK_p,      spawn,          {.v = passcmd } },
 	{ MODKEY|ControlMask,           XK_r,      spawn,          {.v = rofibeats } },
 	
