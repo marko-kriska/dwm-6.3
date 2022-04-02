@@ -74,10 +74,10 @@ static const char *rofibeats[] = { "rofi-beats",  NULL };
 
 /* power */
 static const char *lockcmd[]      = { "slock", NULL };
-static const char *suspendcmd[]   = { "systemctl", "suspend",   NULL };
-static const char *hibernatecmd[] = { "systemctl", "hibernate", NULL };
-static const char *rebootcmd[]    = { "systemctl", "reboot",    NULL };
-static const char *shutdowncmd[]  = { "systemctl", "poweroff",  NULL };
+/* static const char *suspendcmd[]   = { "systemctl", "suspend",   NULL }; */
+/* static const char *hibernatecmd[] = { "systemctl", "hibernate", NULL }; */
+/* static const char *rebootcmd[]    = { "systemctl", "reboot",    NULL }; */
+/* static const char *shutdowncmd[]  = { "systemctl", "poweroff",  NULL }; */
 
 /* volume */
 static const char *upvol[]   = { "pactl", "set-sink-volume", "0", "+5%",     NULL };
@@ -118,10 +118,10 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = rofi } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = filecmd } },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockcmd } },
-	{ MODKEY|ShiftMask,             XK_u,      spawn,          {.v = suspendcmd } },
-	{ MODKEY|ShiftMask,             XK_h,      spawn,          {.v = hibernatecmd } },
-	{ MODKEY|ShiftMask,             XK_r,      spawn,          {.v = rebootcmd } },
-	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = shutdowncmd } },
+	/* { MODKEY|ShiftMask,          XK_u,      spawn,          {.v = suspendcmd } }, */
+	/* { MODKEY|ShiftMask,          XK_h,      spawn,          {.v = hibernatecmd } }, */
+	/* { MODKEY|ShiftMask,          XK_r,      spawn,          {.v = rebootcmd } }, */
+	/* { MODKEY|ShiftMask,          XK_s,      spawn,          {.v = shutdowncmd } }, */
 	{ MODKEY|ShiftMask,             XK_m,      zoom,           {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
