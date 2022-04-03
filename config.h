@@ -5,7 +5,8 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Hermit:weight=regular:size=10:antialias=true:hinting=true", "JoyPixels:weight=regular:size=10:antialias=true:hinting=true" };
+static const char *fonts[]          = { "Hermit:weight=regular:size=10:antialias=true:hinting=true", 
+					"JoyPixels:weight=regular:size=10:antialias=true:hinting=true" };
 static const char dmenufont[]       = "Hermit:weight=regular:size=10:antialias=true:hinting=true";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -74,10 +75,10 @@ static const char *rofibeats[] = { "rofi-beats",  NULL };
 
 /* power */
 static const char *lockcmd[]      = { "slock", NULL };
-/* static const char *suspendcmd[]   = { "systemctl", "suspend",   NULL }; */
-/* static const char *hibernatecmd[] = { "systemctl", "hibernate", NULL }; */
-/* static const char *rebootcmd[]    = { "systemctl", "reboot",    NULL }; */
-/* static const char *shutdowncmd[]  = { "systemctl", "poweroff",  NULL }; */
+static const char *suspendcmd[]   = { "systemctl", "suspend",   NULL };
+static const char *hibernatecmd[] = { "systemctl", "hibernate", NULL };
+static const char *rebootcmd[]    = { "systemctl", "reboot",    NULL };
+static const char *shutdowncmd[]  = { "systemctl", "poweroff",  NULL };
 
 /* volume */
 static const char *upvol[]   = { "pactl", "set-sink-volume", "0", "+5%",     NULL };
@@ -118,10 +119,10 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = rofi } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = filecmd } },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockcmd } },
-	/* { MODKEY|ShiftMask,          XK_u,      spawn,          {.v = suspendcmd } }, */
-	/* { MODKEY|ShiftMask,          XK_h,      spawn,          {.v = hibernatecmd } }, */
-	/* { MODKEY|ShiftMask,          XK_r,      spawn,          {.v = rebootcmd } }, */
-	/* { MODKEY|ShiftMask,          XK_s,      spawn,          {.v = shutdowncmd } }, */
+	{ MODKEY|ShiftMask,             XK_u,      spawn,          {.v = suspendcmd } },
+	{ MODKEY|ShiftMask,             XK_h,      spawn,          {.v = hibernatecmd } },
+	{ MODKEY|ShiftMask,             XK_r,      spawn,          {.v = rebootcmd } },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = shutdowncmd } },
 	{ MODKEY|ShiftMask,             XK_m,      zoom,           {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
