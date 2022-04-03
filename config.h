@@ -71,7 +71,7 @@ static const char *rofi[] = { "/bin/sh", "-c", "rofi -show run",       NULL };
 
 /* scripts */
 static const char *passcmd[]   = { "passmenu",    NULL };
-static const char *rofibeats[] = { "rofi-beats",  NULL };
+static const char *dmradio[]  = { "dm-radio",  NULL };
 
 /* power */
 static const char *lockcmd[]      = { "slock", NULL };
@@ -132,7 +132,7 @@ static Key keys[] = {
 	
 	/* MODKEY|ControlMask */
 	{ MODKEY|ControlMask,           XK_p,      spawn,          {.v = passcmd } },
-	{ MODKEY|ControlMask,           XK_r,      spawn,          {.v = rofibeats } },
+	{ MODKEY|ControlMask,           XK_r,      spawn,          {.v = dmradio } },
 	
 	/* VOLUME */
 	{ 0,              XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
