@@ -70,7 +70,7 @@ static const char *mail[] = { "/bin/sh", "-c", "alacritty -e neomutt", NULL };
 static const char *rofi[] = { "/bin/sh", "-c", "rofi -show run",       NULL };
 
 /* scripts */
-static const char *passcmd[]   = { "passmenu",    NULL };
+static const char *passcmd[]  = { "passmenu",  NULL };
 static const char *dmradio[]  = { "dm-radio",  NULL };
 
 /* power */
