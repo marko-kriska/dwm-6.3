@@ -1,7 +1,7 @@
 # dwm-6.3
 my dwm config
 
-![2022-03-30_18-53](https://user-images.githubusercontent.com/95656575/162617100-2491500a-c419-43a9-ab60-3e70ce76ff08.png)
+![2022-05-20_12-39](https://user-images.githubusercontent.com/95656575/169511401-ac74c790-62f8-412e-93a2-7f8a835409aa.png)
 
 # What I use
 
