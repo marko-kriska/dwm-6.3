@@ -12,7 +12,7 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#ff3cff";
+static const char col_cyan[]        = "#ff10f0";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -67,11 +67,11 @@ static const char *screenshot[] = { "flameshot", "gui", NULL };
 
 /* TUI */
 static const char *mail[] = { "/bin/sh", "-c", "alacritty -e neomutt", NULL };
-static const char *rofi[] = { "/bin/sh", "-c", "rofi -show run",       NULL };
+static const char *rofi[] = { "/bin/sh", "-c", "rofi -show drun",      NULL };
 
 /* scripts */
-static const char *passcmd[] = { "passmenu",  NULL };
-static const char *dmradio[] = { "dm-radio",  NULL };
+static const char *passcmd[] = { "rofi-pass",  NULL };
+static const char *rofibeats[] = { "rofi-beats-linux",  NULL };
 
 /* power */
 static const char *lockcmd[]      = { "slock", NULL };
@@ -132,7 +132,7 @@ static Key keys[] = {
 	
 	/* MODKEY|ControlMask */
 	{ MODKEY|ControlMask,           XK_p,      spawn,          {.v = passcmd } },
-	{ MODKEY|ControlMask,           XK_r,      spawn,          {.v = dmradio } },
+	{ MODKEY|ControlMask,           XK_r,      spawn,          {.v = rofibeats } },
 	
 	/* VOLUME */
 	{ 0,              XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
