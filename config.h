@@ -67,7 +67,7 @@ static const char *screenshot[] = { "flameshot", "gui", NULL };
 
 /* TUI */
 static const char *mail[] = { "/bin/sh", "-c", "kitty -e neomutt", NULL };
-static const char *rofi[] = { "/bin/sh", "-c", "rofi -show drun",      NULL };
+static const char *rofi[] = { "/bin/sh", "-c", "rofi -show drun",  NULL };
 
 /* scripts */
 static const char *passcmd[] = { "rofi-pass",  NULL };
