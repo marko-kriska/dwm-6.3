@@ -5,9 +5,9 @@ static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Hermit:weight=regular:size=10:antialias=true:hinting=true", 
+static const char *fonts[]          = { "JetBrainsMono Nerd Font:weight=regular:size=10:antialias=true:hinting=true", 
 					"JoyPixels:weight=regular:size=10:antialias=true:hinting=true" };
-static const char dmenufont[]       = "Hermit:weight=regular:size=10:antialias=true:hinting=true";
+static const char dmenufont[]       = "JetBrainsMono Nerd Font:weight=regular:size=10:antialias=true:hinting=true";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -60,13 +60,13 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]   = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]    = { "alacritty", NULL };
+static const char *termcmd[]    = { "kitty", NULL };
 static const char *filecmd[]    = { "pcmanfm",   NULL };
 static const char *browsercmd[] = { "firefox",   NULL };
 static const char *screenshot[] = { "flameshot", "gui", NULL };
 
 /* TUI */
-static const char *mail[] = { "/bin/sh", "-c", "alacritty -e neomutt", NULL };
+static const char *mail[] = { "/bin/sh", "-c", "kitty -e neomutt", NULL };
 static const char *rofi[] = { "/bin/sh", "-c", "rofi -show drun",      NULL };
 
 /* scripts */
