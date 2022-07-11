@@ -95,7 +95,7 @@ static const char *brightnessdown[] = { "xbacklight", "-dec", "10", NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	/* MODKEY */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },	
+	{ MODKEY,                       XK_p,      spawn,          {.v = rofi } },	
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_e,	   spawn,          {.v = mail } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = browsercmd } },
@@ -118,7 +118,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	
 	/* MODKEY|ShiftMask */
-	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = rofi } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = filecmd } },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockcmd } },
 	{ MODKEY|ShiftMask,             XK_u,      spawn,          {.v = suspendcmd } },
