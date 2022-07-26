@@ -65,6 +65,7 @@ static const char *dmenucmd[]   = { "dmenu_run", "-m", dmenumon, "-fn", dmenufon
 static const char *termcmd[]    = { "/bin/sh", "-c", "alacritty -e fish", NULL };
 static const char *filecmd[]    = { "pcmanfm",   NULL };
 static const char *browsercmd[] = { "firefox",   NULL };
+static const char *steamcmd[]   = { "steam",   NULL };
 static const char *screenshot[] = { "flameshot", "gui", NULL };
 static const char *passcmd[]    = { "rofi-pass",  NULL };
 static const char *rofibeats[]  = { "rofi-beats-linux",  NULL };
@@ -82,6 +83,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd} },	
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = browsercmd } },
+	{ MODKEY,                       XK_s,      spawn,          {.v = steamcmd } },
 	{ MODKEY,                       XK_Print,  spawn,          {.v = screenshot} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
