@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -10,9 +10,9 @@ static const char *fonts[]          = { "JetBrainsMonoMedium Nerd Font:weight=re
 static const char dmenufont[]       = "JetBrainsMonoMedium Nerd Font:weight=regular:size=10:antialias=true:hinting=true";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
+static const char col_gray3[]       = "#bd93f9";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#6272a4";
+static const char col_cyan[]        = "#ff79c6";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -66,38 +66,21 @@ static const char *termcmd[]    = { "/bin/sh", "-c", "alacritty -e fish", NULL }
 static const char *filecmd[]    = { "pcmanfm",   NULL };
 static const char *browsercmd[] = { "firefox",   NULL };
 static const char *screenshot[] = { "flameshot", "gui", NULL };
-
-/* TUI */
-static const char *mail[] = { "/bin/sh", "-c", "alacritty -e neomutt", NULL };
-static const char *rofi[] = { "/bin/sh", "-c", "rofi -show drun",  NULL };
-
-/* scripts */
-static const char *passcmd[] = { "rofi-pass",  NULL };
-static const char *rofibeats[] = { "rofi-beats-linux",  NULL };
-
-/* power */
-static const char *lockcmd[]      = { "slock", NULL };
-static const char *suspendcmd[]   = { "systemctl", "suspend",   NULL };
-static const char *hibernatecmd[] = { "systemctl", "hibernate", NULL };
-static const char *rebootcmd[]    = { "systemctl", "reboot",    NULL };
-static const char *shutdowncmd[]  = { "systemctl", "poweroff",  NULL };
-
-/* volume */
-static const char *upvol[]   = { "pactl", "set-sink-volume", "0", "+5%",     NULL };
-static const char *downvol[] = { "pactl", "set-sink-volume", "0", "-5%",     NULL };
-static const char *mutevol[] = { "pactl", "set-sink-mute",   "0", "toggle",  NULL };
-static const char *mutemic[] = { "pactl", "set-source-mute", "@DEFAULT_SOURCE@", "toggle", NULL };
-
-/* backlight */
-static const char *brightnessup[]   = { "xbacklight", "-inc", "10", NULL };
-static const char *brightnessdown[] = { "xbacklight", "-dec", "10", NULL };
+static const char *passcmd[]    = { "rofi-pass",  NULL };
+static const char *rofibeats[]  = { "rofi-beats-linux",  NULL };
+static const char *lockcmd[]    = { "slock", NULL };
+static const char *upvol[]      = { "pactl", "set-sink-volume", "0", "+5%",     NULL };
+static const char *downvol[]    = { "pactl", "set-sink-volume", "0", "-5%",     NULL };
+static const char *mutevol[]    = { "pactl", "set-sink-mute",   "0", "toggle",  NULL };
+static const char *mutemic[]    = { "pactl", "set-source-mute", "@DEFAULT_SOURCE@", "toggle", NULL };
+static const char *brightup[]   = { "xbacklight", "-inc", "10", NULL };
+static const char *brightdown[] = { "xbacklight", "-dec", "10", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	/* MODKEY */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd} },	
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_e,	   spawn,          {.v = mail } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = browsercmd } },
 	{ MODKEY,                       XK_Print,  spawn,          {.v = screenshot} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
@@ -116,36 +99,22 @@ static Key keys[] = {
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-	
-	/* MODKEY|ShiftMask */
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = filecmd } },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockcmd } },
-	{ MODKEY|ShiftMask,             XK_u,      spawn,          {.v = suspendcmd } },
-	{ MODKEY|ShiftMask,             XK_h,      spawn,          {.v = hibernatecmd } },
-	{ MODKEY|ShiftMask,             XK_r,      spawn,          {.v = rebootcmd } },
-	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = shutdowncmd } },
 	{ MODKEY|ShiftMask,             XK_m,      zoom,           {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	
-	/* MODKEY|ControlMask */
 	{ MODKEY|ControlMask,           XK_p,      spawn,          {.v = passcmd } },
 	{ MODKEY|ControlMask,           XK_r,      spawn,          {.v = rofibeats } },
-	
-	/* VOLUME */
-	{ 0,              XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
-	{ 0,              XF86XK_AudioMute,        spawn,          {.v = mutevol } },
-	{ 0,              XF86XK_AudioRaiseVolume, spawn,          {.v = upvol   } },
-	{ 0,              XF86XK_AudioMicMute,     spawn,          {.v = mutemic } },
-
-	/* BRIGHTNESS*/
-	{ 0,             XF86XK_MonBrightnessUp,   spawn,          {.v = brightnessup} },
-        { 0,             XF86XK_MonBrightnessDown, spawn,          {.v = brightnessdown} },
-
-	/* TAGKEYS */
+	{ 0,             XF86XK_AudioLowerVolume,  spawn,          {.v = downvol } },
+	{ 0,             XF86XK_AudioMute,         spawn,          {.v = mutevol } },
+	{ 0,             XF86XK_AudioRaiseVolume,  spawn,          {.v = upvol   } },
+	{ 0,             XF86XK_AudioMicMute,      spawn,          {.v = mutemic } },
+	{ 0,             XF86XK_MonBrightnessUp,   spawn,          {.v = brightup} },
+        { 0,             XF86XK_MonBrightnessDown, spawn,          {.v = brightdown} },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
