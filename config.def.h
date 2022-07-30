@@ -78,8 +78,8 @@ static const char *brightdown[] = { "xbacklight", "-dec", "10", NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	/* MODKEY */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd} },	
-	{ MODKEY,                       XK_Return, spawn,          {.v = roficmd } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = roficmd} },	
+	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = browsercmd } },
 	{ MODKEY,                       XK_Print,  spawn,          {.v = screenshot} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
